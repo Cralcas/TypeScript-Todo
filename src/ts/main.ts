@@ -1,8 +1,8 @@
 import "../sass/style.scss";
-import {taskModal} from "./modal";
+import {closeModal} from "./modal";
 import {Task} from "./models/Task";
 
-// const addTaskButton = document.getElementById("addTaskButton") as HTMLElement;
+const modal = document.getElementById("modal") as HTMLElement;
 const titleInput = document.getElementById("titleInput") as HTMLInputElement;
 const dateInput = document.getElementById("dateInput") as HTMLInputElement;
 const descriptionInput = document.getElementById(
@@ -21,6 +21,15 @@ document.getElementById("form")?.addEventListener("submit", (e) => {
     const description = descriptionInput.value;
 
     taskData.push(new Task(title, date, description));
+
+    console.log(taskData);
+    resetForm();
   }
 });
-taskModal();
+
+const resetForm = () => {
+  titleInput.value = "";
+  dateInput.value = "";
+  descriptionInput.value = "";
+  closeModal(modal);
+};
