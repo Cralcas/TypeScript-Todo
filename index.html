@@ -12,7 +12,7 @@
   <main>
     <h1>To Do List</h1>
     <div id="container">
-      <button id="createTaskButton" data-modal-target="#modal">Add Task</button>
+      <button id="createTaskButton" data-modal-target="#modal">Add New Task</button>
       <form id="form" class="">
 
       </form>
@@ -25,7 +25,7 @@
           <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
-          <div id="taskDetails">
+          <div class="task-details">
 
             <label for="titleInput">Title</label>
             <input id="titleInput" type="text"></input>
@@ -36,6 +36,7 @@
             <label for="descriptionInput">Description</label>
             <textarea id="descriptionInput" cols="30" rows="5"></textarea>
           </div>
+          <button id="addTaskButton" class="add-task-button">Add Task</button>
         </div>
       </div>
       <div id="overlay"></div>

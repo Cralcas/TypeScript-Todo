@@ -48,9 +48,14 @@ main {
     }
   }
   .modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 
-    #taskDetails {
+    .task-details {
+      width: 400px;
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -59,6 +64,10 @@ main {
         margin-bottom: 15px;
       }
     }
+  }
+  .add-task-button {
+    width: 100px;
+    margin-top: 10px;
   }
 }
 
