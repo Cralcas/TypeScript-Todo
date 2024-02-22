@@ -13,19 +13,20 @@
     <h1>To Do List</h1>
     <div id="container">
       <button id="createTaskButton" data-modal-target="#modal">Add New Task</button>
-      <form id="form" class="">
 
-      </form>
       <div id="taskContainer">
-        </divi>
       </div>
-      <div class="modal" id="modal">
-        <div class="modal-header">
-          <div class="title">Create a task</div>
-          <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modal-body">
-          <div class="task-details">
+    </div>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Create a task</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="task-details">
+          <form id="form" class="task-form">
+
 
             <label for="titleInput">Title</label>
             <input id="titleInput" type="text"></input>
@@ -35,11 +36,12 @@
 
             <label for="descriptionInput">Description</label>
             <textarea id="descriptionInput" cols="30" rows="5"></textarea>
-          </div>
-          <button id="addTaskButton" class="add-task-button">Add Task</button>
         </div>
+        <button id="addTaskButton" class="add-task-button">Add Task</button>
+        </form>
       </div>
-      <div id="overlay"></div>
+    </div>
+    <div id="overlay"></div>
   </main>
   <script type="module" src="/src/ts/main.ts"></script>
 </body>
