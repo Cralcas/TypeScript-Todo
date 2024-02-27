@@ -1,9 +1,11 @@
 export class Task {
-  title: string;
-  date: string;
-  description: string;
-
-  constructor(title: string, date: string, description: string) {
+  taskStatus: boolean;
+  constructor(
+    public title: string,
+    public date: string,
+    public description: string
+  ) {
+    this.taskStatus = false;
     this.title = title;
     this.date = date;
     this.description = description;
