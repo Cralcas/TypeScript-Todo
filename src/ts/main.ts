@@ -37,7 +37,7 @@ const resetForm = () => {
 const createTask = () => {
   taskContainer.innerHTML = "";
 
-  taskData.forEach((todo) => {
+  taskData.forEach((todo, i) => {
     const taskCard = document.createElement("div");
     const taskTitle = document.createElement("p");
     const taskDate = document.createElement("p");
@@ -48,6 +48,11 @@ const createTask = () => {
     taskDate.innerHTML = todo.date;
     taskDescription.innerHTML = todo.description;
     deleteTaskButton.innerHTML = "Delete";
+
+    deleteTaskButton.addEventListener("click", () => {
+      taskData.splice(i, 1);
+      createTask();
+    });
 
     taskCard.appendChild(taskTitle);
     taskCard.appendChild(taskDate);
