@@ -43,21 +43,32 @@ const createTask = () => {
     const taskDate = document.createElement("p");
     const taskDescription = document.createElement("p");
     const deleteTaskButton = document.createElement("button");
+    const taskStatusButton = document.createElement("button");
 
     taskTitle.innerHTML = todo.title;
     taskDate.innerHTML = todo.date;
     taskDescription.innerHTML = todo.description;
     deleteTaskButton.innerHTML = "Delete";
+    taskStatusButton.innerHTML = todo.taskStatus ? "Done" : "Not done"
 
     deleteTaskButton.addEventListener("click", () => {
       taskData.splice(i, 1);
       createTask();
     });
 
+    taskStatusButton.addEventListener("click", () => {
+      todo.taskStatus = !todo.taskStatus;
+
+      todo.taskStatus ? console.log("klar") : console.log("inte klar");
+      
+      createTask()
+    })
+
     taskCard.appendChild(taskTitle);
     taskCard.appendChild(taskDate);
     taskCard.appendChild(taskDescription);
     taskCard.appendChild(deleteTaskButton);
+    taskCard.appendChild(taskStatusButton);
     taskContainer.appendChild(taskCard);
   });
 };
