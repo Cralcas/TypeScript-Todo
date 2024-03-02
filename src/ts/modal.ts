@@ -1,4 +1,4 @@
-const openModal = (modal: HTMLElement) => {
+ export const openModal = (modal: HTMLElement) => {
   if (modal == null) return;
   modal.classList.add("active");
   overlay.classList.add("active");
