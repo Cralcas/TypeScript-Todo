@@ -5,12 +5,55 @@
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100vh;
+}
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+
+  h1 {
+    padding-top: 3rem;
+  }
 }
+
+.taskCard {
+  max-width: 200px;
+  overflow-wrap: break-word;
+
+  .taskCard-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  button {
+    margin: 0.1rem;
+    cursor: pointer;
+  }
+}
+
+#container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+
+  .task-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  }
+}
+
 
 .modal {
   position: fixed;
