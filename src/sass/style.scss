@@ -25,8 +25,15 @@ main {
     text-decoration: underline;
   }
 
-  button {
+  .create-task-btn {
     background-color: v.$primary-btn;
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #1d7d73;
+    }
   }
 }
 
@@ -53,7 +60,13 @@ main {
     button {
       background-color: v.$secondary-btn;
       margin: 0.1rem;
+      padding: 0.2rem;
+      border-radius: 5px;
       cursor: pointer;
+
+      &:hover {
+        background-color: #dc8100;
+      }
     }
   }
 }
