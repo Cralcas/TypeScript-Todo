@@ -24,7 +24,7 @@ addTaskButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (titleInput.value.trim() === "") {
-    alert("Title cannot be empty");
+    alert("Title can not be empty");
     return;
   }
 

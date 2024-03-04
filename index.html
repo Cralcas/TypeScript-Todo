@@ -10,12 +10,14 @@
 
 <body>
   <main>
+    <div class="container">
     <h1>To Do List</h1>
     <button id="createTaskButton" class="create-task-btn" data-modal-target="#modal">Add New Task</button>
-    <div id="container">
+    <div class="list-body">
       <div id="taskContainer" class="task__container">
       </div>
     </div>
+  </div>
 
 
     <div class="modal" id="modal">
@@ -42,6 +44,7 @@
       </div>
     </div>
     <div id="overlay"></div>
+  
   </main>
   <script type="module" src="/src/ts/main.ts"></script>
 </body>

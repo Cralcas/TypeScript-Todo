@@ -18,54 +18,58 @@ main {
   @include mx.col-center;
   gap: 2rem;
 
-  h1 {
-    margin-top: 3rem;
+  .container {
+    @include mx.col-center;
+    width: 300px; //ändra beroend på skärm storlek, 700px lg, md??? .300pxsm
+    margin-top: 2rem;
+    padding: 3rem;
+    background: gray;
+    border: 1px solid black;
+    gap: 2rem;
 
-    font-size: 3rem;
-    text-decoration: underline;
-  }
-
-  .create-task-btn {
-    background-color: v.$primary-btn;
-    cursor: pointer;
-    padding: 0.2rem;
-    border-radius: 5px;
-
-    &:hover {
-      background-color: #1d7d73;
+    h1 {
+      font-size: 3rem;
+      text-decoration: underline;
     }
-  }
-}
 
-#container {
-  @include mx.col-center;
-  gap: 2rem;
-
-  .task__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-
-    &__card {
-      max-width: 200px;
-      overflow-wrap: break-word;
-
-      &__title {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-    }
-    button {
-      background-color: v.$secondary-btn;
-      margin: 0.1rem;
+    .create-task-btn {
+      background-color: v.$primary-btn;
+      cursor: pointer;
       padding: 0.2rem;
       border-radius: 5px;
-      cursor: pointer;
 
       &:hover {
-        background-color: #dc8100;
+        background-color: #1d7d73;
+      }
+    }
+
+    .task__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+
+      .task__card {
+        max-width: 250px; //Så texten inte overflow         250pxsm
+        overflow-wrap: break-word;
+        background-color: #1d7d73;
+
+        &__title {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+      button {
+        background-color: v.$secondary-btn;
+        margin: 0.1rem;
+        padding: 0.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #dc8100;
+        }
       }
     }
   }

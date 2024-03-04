@@ -30,9 +30,9 @@ export const createTask = () => {
     const editTaskButton = document.createElement("button");
 
     taskCard.className = "task__card";
-    taskTitle.className = "task__title";
-    taskDate.className = "task__date";
-    taskDescription.className = "task__description";
+    taskTitle.className = "task__card__title";
+    taskDate.className = "task__card__date";
+    taskDescription.className = "task__card__description";
 
     taskTitle.innerHTML = todo.title;
     taskDate.innerHTML = todo.date;
