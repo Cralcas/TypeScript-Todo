@@ -1,12 +1,17 @@
 import "../sass/style.scss";
-import { createTask, dateInput, descriptionInput, resetForm, titleInput } from "./createTaskHTML";
-import {Task} from "./models/Task";
+import {
+  createTask,
+  dateInput,
+  descriptionInput,
+  resetForm,
+  titleInput,
+} from "./createTaskHTML";
+import { Task } from "./models/Task";
 
-export const taskData: Task[] = [];
+export let taskData: Task[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
 export const modal = document.getElementById("modal") as HTMLElement;
-const addTaskButton = document.getElementById("addTaskButton") as HTMLElement
-
+const addTaskButton = document.getElementById("addTaskButton") as HTMLElement;
 
 titleInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -15,11 +20,10 @@ titleInput.addEventListener("keydown", (event) => {
   }
 });
 
-
 addTaskButton.addEventListener("click", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 
-  if (titleInput.value.trim() === '') {
+  if (titleInput.value.trim() === "") {
     alert("Title cannot be empty");
     return;
   }
@@ -35,3 +39,4 @@ addTaskButton.addEventListener("click", (e) => {
     resetForm();
   }
 });
+createTask();
