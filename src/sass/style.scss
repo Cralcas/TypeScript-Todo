@@ -34,28 +34,37 @@ main {
 
     .create-task-btn {
       background-color: v.$primary-btn;
-      cursor: pointer;
       padding: 0.2rem;
       border-radius: 5px;
 
+      transition: all 0.1s ease-in-out;
+      outline: none;
+      box-shadow: 0.1em 0.1em;
+
+      cursor: pointer;
+
       &:hover {
-        background-color: #1d7d73;
+        transform: translateY(3px);
+        box-shadow: none;
+      }
+      &:active {
+        opacity: 0.5;
       }
     }
 
-    .task__container {
+    .task-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 20px;
 
-      .task__card {
-        max-width: 250px; //Så texten inte overflow         250pxsm
+      .task-card {
+        max-width: 250px; //Så texten inte overflow  250 på sm
         overflow-wrap: break-word;
         background-color: #1d7d73;
 
-        &__title {
+        .task-card-title {
           font-size: 2rem;
           font-weight: bold;
         }
@@ -64,11 +73,20 @@ main {
         background-color: v.$secondary-btn;
         margin: 0.1rem;
         padding: 0.2rem;
+
         border-radius: 5px;
+        transition: all 0.1s ease-in-out;
+        border: none;
+        box-shadow: 0.1em 0.1em;
+
         cursor: pointer;
 
         &:hover {
-          background-color: #dc8100;
+          transform: translateY(3px);
+          box-shadow: none;
+        }
+        &:active {
+          opacity: 0.5;
         }
       }
     }
