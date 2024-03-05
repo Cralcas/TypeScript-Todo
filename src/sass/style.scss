@@ -21,7 +21,7 @@ main {
   .container {
     @include mx.col-center;
     width: 300px; //ändra beroend på skärm storlek, 700px lg, md??? .300pxsm
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-top: 2rem;
     padding: 3rem;
     background: #cbf3f0;
