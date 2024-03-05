@@ -27,7 +27,6 @@ export const createTask = () => {
     const taskDescription = document.createElement("p");
     const deleteTaskButton = document.createElement("button");
     const taskStatusButton = document.createElement("button");
-    const editTaskButton = document.createElement("button");
 
     taskCard.className = "task-card";
     taskTitle.className = "task-card-title";
@@ -40,7 +39,6 @@ export const createTask = () => {
 
     deleteTaskButton.innerHTML = "Delete";
     taskStatusButton.innerHTML = todo.taskStatus ? "Not done" : " Done";
-    editTaskButton.innerHTML = "Edit";
 
     deleteTaskButton.addEventListener("click", () => {
       taskData.splice(i, 1);
@@ -68,9 +66,8 @@ export const createTask = () => {
     taskCard.appendChild(taskTitle);
     taskCard.appendChild(taskDate);
     taskCard.appendChild(taskDescription);
-    taskCard.appendChild(deleteTaskButton);
     taskCard.appendChild(taskStatusButton);
-    taskCard.appendChild(editTaskButton);
+    taskCard.appendChild(deleteTaskButton);
     taskContainer.appendChild(taskCard);
   });
 };

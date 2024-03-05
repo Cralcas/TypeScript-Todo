@@ -16,7 +16,7 @@ body {
 
 main {
   @include mx.col-center;
-  gap: 2rem;
+  gap: 2.5rem;
 
   .container {
     @include mx.col-center;
@@ -58,18 +58,15 @@ main {
       gap: 20px;
 
       .task-card {
-        max-width: 250px; //Så texten inte overflow  250 på sm
-
+        max-width: 250px;
         overflow-wrap: break-word;
-        background-color: #1d7d73;
-
         .task-card-title {
           font-size: 2rem;
         }
       }
       button {
         background-color: v.$secondary-btn;
-        margin: 0.2rem;
+        margin: 1rem 0.2rem 0.2rem 0.2rem;
         padding: 0.2rem;
         border-radius: 5px;
         border: none;
@@ -132,8 +129,17 @@ main {
       flex-direction: column;
       gap: 5px;
 
+      label {
+        font-size: 1.5rem;
+      }
+
       input {
         margin-bottom: 15px;
+        border: 1px solid black;
+      }
+
+      textarea {
+        border: 1px solid black;
       }
     }
   }
@@ -168,6 +174,24 @@ main {
   main {
     .container {
       width: 500px;
+
+      .create-task-btn {
+        font-size: 1.5rem;
+        padding: 0.6rem;
+      }
+
+      .task-card {
+        width: 300px;
+
+        .task-card-description {
+          font-size: 1.5rem;
+        }
+
+        button {
+          padding: 0.6rem;
+          font-size: 1rem;
+        }
+      }
     }
   }
 }
@@ -176,9 +200,29 @@ main {
   main {
     .container {
       width: 700px;
-    }
-    .task-card {
-      width: 300px;
+
+      h1 {
+        font-size: 4rem;
+        text-decoration: underline;
+      }
+      .task-container {
+        .task-card {
+          width: 300px;
+
+          .task-card-title {
+            font-size: 3rem;
+          }
+
+          .task-card-description {
+            font-size: 1.5rem;
+          }
+
+          button {
+            padding: 0.6rem;
+            font-size: 1rem;
+          }
+        }
+      }
     }
   }
 }
