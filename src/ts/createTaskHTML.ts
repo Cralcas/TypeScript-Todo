@@ -39,7 +39,7 @@ export const createTask = () => {
     taskDescription.innerHTML = todo.description;
 
     deleteTaskButton.innerHTML = "Delete";
-    taskStatusButton.innerHTML = todo.taskStatus ? "Done" : "Not done";
+    taskStatusButton.innerHTML = todo.taskStatus ? "Not done" : " Done";
     editTaskButton.innerHTML = "Edit";
 
     deleteTaskButton.addEventListener("click", () => {
@@ -49,9 +49,21 @@ export const createTask = () => {
 
     taskStatusButton.addEventListener("click", () => {
       todo.taskStatus = !todo.taskStatus;
-      todo.taskStatus ? console.log("klar") : console.log("inte klar");
-      createTask();
+      if (todo.taskStatus) {
+        taskCard.style.opacity = "0.5"; // Set color to red if task is not done
+        taskStatusButton.innerHTML = "Not done";
+      } else {
+        taskStatusButton.innerHTML = "Done";
+        taskCard.style.opacity = "1"; // Set color to black if task is done
+      }
+      localStorage.setItem("todos", JSON.stringify(taskData));
     });
+
+    if (todo.taskStatus) {
+      taskCard.style.opacity = "0.5"; // Set color to red if task is not done
+    } else {
+      taskCard.style.opacity = "1"; // Set color to black if task is done
+    }
 
     taskCard.appendChild(taskTitle);
     taskCard.appendChild(taskDate);
