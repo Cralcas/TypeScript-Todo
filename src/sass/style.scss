@@ -21,10 +21,12 @@ main {
   .container {
     @include mx.col-center;
     width: 300px; //ändra beroend på skärm storlek, 700px lg, md??? .300pxsm
+
     margin-top: 2rem;
     padding: 3rem;
-    background: gray;
+    background: #cbf3f0;
     border: 1px solid black;
+    border-radius: 5px;
     gap: 2rem;
 
     h1 {
@@ -57,12 +59,12 @@ main {
 
       .task-card {
         max-width: 250px; //Så texten inte overflow  250 på sm
+
         overflow-wrap: break-word;
         background-color: #1d7d73;
 
         .task-card-title {
           font-size: 2rem;
-          font-weight: bold;
         }
       }
       button {
@@ -160,4 +162,23 @@ main {
 
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
+}
+
+@media (min-width: v.$breakpoint-md) {
+  main {
+    .container {
+      width: 500px;
+    }
+  }
+}
+
+@media (min-width: v.$breakpoint-lg) {
+  main {
+    .container {
+      width: 700px;
+    }
+    .task-card {
+      width: 300px;
+    }
+  }
 }
