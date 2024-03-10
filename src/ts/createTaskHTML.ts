@@ -46,17 +46,12 @@ export const createTask = () => {
     });
 
     taskStatusButton.addEventListener("click", () => {
-      const index = taskData.indexOf(todo);
       todo.taskStatus = !todo.taskStatus;
       if (todo.taskStatus) {
-        taskData.splice(index, 1);
-        taskData.push(todo);
         taskCard.style.opacity = "0.5";
         taskStatusButton.innerHTML = "Not done";
         createTask();
       } else {
-        taskData.splice(index, 1);
-        taskData.splice(i, 0, todo);
         taskStatusButton.innerHTML = "Done";
         taskCard.style.opacity = "1";
         createTask();
