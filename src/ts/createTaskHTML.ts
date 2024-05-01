@@ -48,19 +48,21 @@ export const createTask = () => {
     taskStatusButton.addEventListener("click", () => {
       todo.taskStatus = !todo.taskStatus;
       if (todo.taskStatus) {
-        taskCard.style.opacity = "0.5"; // Set color to red if task is not done
+        taskCard.style.opacity = "0.5";
         taskStatusButton.innerHTML = "Not done";
+        createTask();
       } else {
         taskStatusButton.innerHTML = "Done";
-        taskCard.style.opacity = "1"; // Set color to black if task is done
+        taskCard.style.opacity = "1";
+        createTask();
       }
       localStorage.setItem("todos", JSON.stringify(taskData));
     });
 
     if (todo.taskStatus) {
-      taskCard.style.opacity = "0.5"; // Set color to red if task is not done
+      taskCard.style.opacity = "0.5";
     } else {
-      taskCard.style.opacity = "1"; // Set color to black if task is done
+      taskCard.style.opacity = "1";
     }
 
     taskCard.appendChild(taskTitle);
